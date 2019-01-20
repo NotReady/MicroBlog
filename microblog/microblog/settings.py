@@ -74,9 +74,12 @@ WSGI_APPLICATION = 'microblog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+# DBの設定
 DATABASES = {
     'default': {
+        # DB名
         'ENGINE': 'django.db.backends.sqlite3',
+        # DBファイルの保存名
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
