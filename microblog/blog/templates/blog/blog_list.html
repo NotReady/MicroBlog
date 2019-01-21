@@ -1,11 +1,8 @@
-<html>
-<head>
-    <title>MicroBlog</title>
-</head>
-<body>
-<h1>MicroBlog</h1>
-<div>
-<!-- ここにデータが入る -->
+<!— 基盤となるhtmlファイルを宣言する —>
+{% extends "base.html" %}
+
+<!— base.htmlをオーバーライドするブロック —>
+{% block body %}
 {# python コメント #}
 {# {%　%} プログラム命令: 出力のない命令 #}
 {# {{}}   値を表示する命令: 出力のある命令 #}
@@ -17,6 +14,5 @@
         </tr>
     {% endfor %}
     </table>
-</div>
-</body>
-</html>
+
+{% endblock %}

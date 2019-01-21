@@ -1,14 +1,9 @@
-<html>
-<head>
-    <title>MicroBlog</title>
-</head>
-<body>
-<h1>MicroBlog</h1>
-<div>
-<!-- ここにデータが入る -->
+<!— 基盤となるhtmlファイルを宣言する —>
+{% extends "base.html" %}
+
+<!— base.htmlをオーバーライドするブロック —>
+{% block body %}
     <!-- モデルはobject変数に格納されている -->
     <h2>{{ object.content }}</h2>
     <p>{{object.posted_date|date:"Y/m/d h:m:s"}}</p>
-</div>
-</body>
-</html>
+{% endblock %}
