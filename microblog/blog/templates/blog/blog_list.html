@@ -1,2 +1,22 @@
-<h1>Blog_LIST</h1>
-<p>this is test</p>
+<html>
+<head>
+    <title>MicroBlog</title>
+</head>
+<body>
+<h1>MicroBlog</h1>
+<div>
+<!-- ここにデータが入る -->
+{# python コメント #}
+{# {%　%} プログラム命令: 出力のない命令 #}
+{# {{}}   値を表示する命令: 出力のある命令 #}
+    <table>
+    {% for blog in object_list %} <!-- blogモデルのリスト -->
+        <tr>
+            <td>{{blog.content}}</td>
+            <td>{{blog.posted_date}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+</body>
+</html>
