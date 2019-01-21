@@ -22,8 +22,9 @@ from blog.views import BlogListView
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path(マッチするアドレス, 呼び出すview関数、アドレスにつけるニックネーム)
-    # ニックネーム呼び出しとすると後の変更の影響を受けない設計
-    # http://localhost:8000/ サイトルートへのリクエスト
-    # クラスベース汎用ベースを使用する場合はas_view()を指定する
+    # ニックネーム呼び出しとすると後のURLの変更による影響を受けない設計ができる
+    # http://localhost:8000/ サイトルートへのリクエストに対して
+    # BlogListViewのas_view()メソッドを紐付ける
+    # ニックネームをindexと設定する
     path('', BlogListView.as_view(), name="index"),
 ]
