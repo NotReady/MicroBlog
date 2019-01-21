@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from blog.views import BlogListView
+from blog.views import BlogListView, BlogDetailView
 
 # リクエスト ⇒ urls.py ⇒ views ⇒ テンプレート ⇒ レスポンス
 
@@ -27,4 +27,7 @@ urlpatterns = [
     # BlogListViewのas_view()メソッドを紐付ける
     # ニックネームをindexと設定する
     path('', BlogListView.as_view(), name="index"),
+    # <int:pk>　int なんかしらの整数
+    # <int:pk>　pk整数が代入される変数 整数値がpk変数に代入される(プライマリキー)
+    path('<int:pk>', BlogDetailView.as_view(), name="detail")
 ]
