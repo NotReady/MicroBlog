@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from blog.views import BlogListView, BlogDetailView, BlogCreateView
+from blog.views import BlogListView, BlogDetailView, BlogCreateView, BlogUpdateView
 
 # リクエスト ⇒ urls.py ⇒ views ⇒ テンプレート ⇒ レスポンス
 
@@ -31,4 +31,5 @@ urlpatterns = [
     # <int:pk>　pk整数が代入される変数 整数値がpk変数に代入される(プライマリキー)
     path('detail/<int:pk>', BlogDetailView.as_view(), name="detail"),
     path('create', BlogCreateView.as_view(), name='create'),
+    path('update/<int:pk>', BlogUpdateView.as_view(), name='update')
 ]
