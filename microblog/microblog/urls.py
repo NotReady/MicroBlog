@@ -29,7 +29,7 @@ urlpatterns = [
     path('', BlogListView.as_view(), name="index"),
     # <int:pk>　int なんかしらの整数
     # <int:pk>　pk整数が代入される変数 整数値がpk変数に代入される(プライマリキー)
-    path('detail/<int:pk>', BlogDetailView.as_view(), name="detail"),
+    path('<int:pk>', BlogDetailView.as_view(), name="detail"),
     path('create', BlogCreateView.as_view(), name='create'),
-    path('update/<int:pk>', BlogUpdateView.as_view(), name='update')
+    path('update/<int:pk>', BlogUpdateView.as_view(), name='update'),
 ]
