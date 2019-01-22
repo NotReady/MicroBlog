@@ -2,17 +2,23 @@
 {% extends "base.html" %}
 
 <!— base.htmlをオーバーライドするブロック —>
-{% block body %}
 {# python コメント #}
 {# {%　%} プログラム命令: 出力のない命令 #}
 {# {{}}   値を表示する命令: 出力のある命令 #}
-    <table>
-    {% for blog in object_list %} <!-- blogモデルのリスト -->
-        <tr>
-            <td>{{blog.content}}</td>
-            <td>{{blog.posted_date}}</td>
-        </tr>
-    {% endfor %}
-    </table>
 
+{% block body %}
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            {% for blog in object_list %} <!-- blogモデルのリスト -->
+            <div class="post-preview">
+                <a href="#">
+                    <h2 class="post-title">
+                    {{blog.content}}
+                    </h2>
+                </a>
+                <p class="post-meta">{{blog.posted_date}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
