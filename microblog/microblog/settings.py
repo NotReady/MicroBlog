@@ -52,11 +52,18 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'microblog.urls'
 
+# テンプレートの設定
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        # テンプレートオプション
+        # 追加のテンプレートの保存先
+        # 探索の優先順はDIRSリスト, デフォルト
+        'DIRS': [
+            os.path.normpath(os.path.join(BASE_DIR, 'templates'))
+        ],
+        # templatesディレクトリを探索するかのオプション
+        # クラスベース汎用ビューはtemplates/モデル名(小文字)/モデル名_汎用クラス名.html
+        # クラスベース汎用ビューが直接使わないものはtemplates/以下 base.htmlなど
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
