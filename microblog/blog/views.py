@@ -9,7 +9,8 @@ from django.views.generic import CreateView
 from django.urls import reverse_lazy
 # クラスベース汎用ビュー 更新ビューのインポート
 from django.views.generic import UpdateView
-
+# クラスベース汎用ビュー 削除ビューのインポート
+from django.views.generic import DeleteView
 from .forms import BlogForm
 
 # 実装モデルのインポート
@@ -42,3 +43,7 @@ class BlogUpdateView(UpdateView):
         blog_pk = self.kwargs['pk']
         url = reverse_lazy('detail', kwargs={"pk": blog_pk})
         return url
+
+class BlogDeleteView(DeleteView):
+    model = Blog
+    success_url = reverse_lazy('index')
