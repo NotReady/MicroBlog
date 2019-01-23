@@ -13,6 +13,8 @@ from django.views.generic import UpdateView
 from django.views.generic import DeleteView
 from .forms import BlogForm
 
+from django.contrib import messages
+
 # 実装モデルのインポート
 from .models import Blog
 
@@ -38,6 +40,18 @@ class BlogCreateView(CreateView):
     success_url = reverse_lazy('index')
     template_name = 'blog/blog_create_form.html'
 
+    # モデルが保存された時のコールバックをオーバーライドする
+    def form_valid(self, form):
+        messages.success(self.request, "作成しました")
+        # スーパークラスのデフォルトを実行する
+        return super().form_valid(form)
+
+    # モデルが保存に失敗した時のコールバックをオーバーライドする
+    def form_invalid(self, form):
+        messages.error(self.request, "作成に失敗しました")
+        # スーパークラスのデフォルトを実行する
+        return super().form_invalid(form)
+
 # 更新ビュー
 class BlogUpdateView(UpdateView):
 
@@ -49,6 +63,19 @@ class BlogUpdateView(UpdateView):
         blog_pk = self.kwargs['pk']
         url = reverse_lazy('detail', kwargs={"pk": blog_pk})
         return url
+
+    # モデルが保存された時のコールバックをオーバーライドする
+    def form_valid(self, form):
+        messages.success(self.request, "保存しました")
+        # スーパークラスのデフォルトを実行する
+        return super().form_valid(form)
+
+    # モデルが保存に失敗した時のコールバックをオーバーライドする
+    def form_invalid(self, form):
+        messages.error(self.request, "保存に失敗しました")
+        # スーパークラスのデフォルトを実行する
+        return super().form_invalid(form)
+
 
 class BlogDeleteView(DeleteView):
     model = Blog
