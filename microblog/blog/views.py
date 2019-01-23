@@ -80,3 +80,10 @@ class BlogUpdateView(UpdateView):
 class BlogDeleteView(DeleteView):
     model = Blog
     success_url = reverse_lazy('index')
+
+    # モデルが削除された時のコールバックをオーバーライドする
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, "削除しました")
+        # スーパークラスのデフォルトを実行する
+        return super().delete(request, args, kwargs)
+
