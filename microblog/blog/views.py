@@ -10,6 +10,8 @@ from django.urls import reverse_lazy
 # クラスベース汎用ビュー 更新ビューのインポート
 from django.views.generic import UpdateView
 
+from .forms import BlogForm
+
 # 実装モデルのインポート
 from .models import Blog
 
@@ -24,15 +26,17 @@ class BlogDetailView(DetailView):
 # 作成ビュー
 class BlogCreateView(CreateView):
     model = Blog
+    form_class = BlogForm
     # ポストコンテンツはfieldsが必須
-    fields = ['content', ]
+    # fields = ['content', ]
     # ポスト成功時のリダイレクト先
     success_url = reverse_lazy('index')
 
 # 更新ビュー
 class BlogUpdateView(UpdateView):
     model = Blog
-    fields = ['content', ]
+    form_class = BlogForm
+    # fields = ['content', ]
 
     def get_success_url(self):
         blog_pk = self.kwargs['pk']
