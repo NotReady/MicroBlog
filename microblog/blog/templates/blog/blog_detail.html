@@ -8,16 +8,16 @@
             <div class="post-preview">
                 <a href="#">
                     <h2 class="post-title">
-                    {{ object.content }}
+                    {{ blog.content }}
                     </h2>
                     <h3 class="post-subtitle">
                         Problems look mighty small from 150 miles up
                     </h3>
                 </a>
-                <p class="post-meta">{{object.posted_date|date:"Y/m/d h:m:s"}}</p>
+                <p class="post-meta">{{blog.posted_date|date:"Y/m/d h:m:s"}}</p>
             </div>
-            <a href="{% url 'update' object.id %}" class="btn btn-default">編集</a>
-            <a href="{% url 'delete' object.id %}" class="btn btn-danger">削除</a>
+            <a href="{% url 'update' blog.id %}" class="btn btn-default">編集</a>
+            <a href="{% url 'delete' blog.id %}" class="btn btn-danger">削除</a>
         </div>
     </div>
 {% endblock %}

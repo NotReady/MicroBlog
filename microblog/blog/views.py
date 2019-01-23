@@ -19,10 +19,14 @@ from .models import Blog
 # リストビュー
 class BlogListView(ListView):
     model = Blog
+    # テンプレートのモデルの参照名を変更
+    # デフォルトobject_listも有効
+    context_object_name = 'Blogs'
 
 # 詳細ビュー
 class BlogDetailView(DetailView):
     model = Blog
+    context_object_name = 'blog'
 
 # 作成ビュー
 class BlogCreateView(CreateView):
