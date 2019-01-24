@@ -22,9 +22,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '(w65ktpy+rr*m(!ujb!f((8njyb82e3pmb(x2lvyp2r7e_6h)t'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
 ALLOWED_HOSTS = []
 
 
@@ -81,17 +78,6 @@ WSGI_APPLICATION = 'microblog.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
-# DBの設定
-DATABASES = {
-    'default': {
-        # DB名
-        'ENGINE': 'django.db.backends.sqlite3',
-        # DBファイルの保存名
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
