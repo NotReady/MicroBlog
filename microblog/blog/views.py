@@ -13,6 +13,9 @@ from django.views.generic import UpdateView
 from django.views.generic import DeleteView
 # フォームヘルパ
 from .forms import BlogForm
+# ログインインターフェース
+# mixinとはインターフェース
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.contrib import messages
 
@@ -24,7 +27,7 @@ class BlogListView(ListView):
     model = Blog
     # 1ページあたりの件数
     # paginate_by = None
-    paginate_by = 3
+    paginate_by = 5
 
     # テンプレートのモデルの参照名を変更
     # デフォルトobject_listも有効
@@ -36,7 +39,8 @@ class BlogDetailView(DetailView):
     context_object_name = 'blog'
 
 # 作成ビュー
-class BlogCreateView(CreateView):
+# mininは先に指定するらしい
+class BlogCreateView(LoginRequiredMixin, CreateView):
     model = Blog
     form_class = BlogForm
     # ポストコンテンツはfieldsが必須
@@ -44,6 +48,10 @@ class BlogCreateView(CreateView):
     # ポスト成功時のリダイレクト先
     success_url = reverse_lazy('index')
     template_name = 'blog/blog_create_form.html'
+
+    # ログインのURL
+    # 未ログイン状態時のリダイレクト先
+    login_url = '/login'
 
     # モデルが保存された時のコールバックをオーバーライドする
     def form_valid(self, form):
@@ -58,11 +66,13 @@ class BlogCreateView(CreateView):
         return super().form_invalid(form)
 
 # 更新ビュー
-class BlogUpdateView(UpdateView):
+class BlogUpdateView(LoginRequiredMixin, UpdateView):
 
     model = Blog
     form_class = BlogForm
     template_name = 'blog/blog_update_form.html'
+
+    login_url = './login'
 
     def get_success_url(self):
         blog_pk = self.kwargs['pk']
@@ -82,9 +92,10 @@ class BlogUpdateView(UpdateView):
         return super().form_invalid(form)
 
 
-class BlogDeleteView(DeleteView):
+class BlogDeleteView(LoginRequiredMixin,  DeleteView):
     model = Blog
     success_url = reverse_lazy('index')
+    login_url = './login'
 
     # モデルが削除された時のコールバックをオーバーライドする
     def delete(self, request, *args, **kwargs):

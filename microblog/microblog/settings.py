@@ -135,3 +135,6 @@ STATICFILES_DIRS = (
     # BASE_DIR
     os.path.normpath(os.path.join(BASE_DIR, "assets")),
 )
+
+# ログイン後のリダイレクト先
+LOGIN_REDIRECT_URL = '/'
