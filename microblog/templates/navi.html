@@ -18,7 +18,8 @@
                 <li><a href="#">{{ user.username }}</a></li>
                         <li><a href="{% url 'logout' %}">logout</a></li>
                     {% else %}
-                        <li><a href="{% url 'login' %}">login</a></li>
+                        <!-- ?next={{request.path}}　遷移元のページをurlに仕込む -->
+                        <li><a href="{% url 'login' %}?next={{request.path}}">login</a></li>
                     {% endif %}
             </ul>
         </div>
