@@ -11,6 +11,7 @@ from django.urls import reverse_lazy
 from django.views.generic import UpdateView
 # クラスベース汎用ビュー 削除ビューのインポート
 from django.views.generic import DeleteView
+# フォームヘルパ
 from .forms import BlogForm
 
 from django.contrib import messages
@@ -21,6 +22,10 @@ from .models import Blog
 # リストビュー
 class BlogListView(ListView):
     model = Blog
+    # 1ページあたりの件数
+    # paginate_by = None
+    paginate_by = 3
+
     # テンプレートのモデルの参照名を変更
     # デフォルトobject_listも有効
     context_object_name = 'Blogs'

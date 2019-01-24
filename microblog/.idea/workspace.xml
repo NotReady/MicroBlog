@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3e523cc-942d-47d5-a69f-717371bfdab3" name="Default Changelist" comment="">
+    <list default="true" id="d3e523cc-942d-47d5-a69f-717371bfdab3" name="Default Changelist" comment="削除のメッセージヘルパを実装">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/blog_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/blog_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,16 +35,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="2616" />
-          <entry key="py" value="3181" />
-          <entry key="txt" value="559" />
+          <entry key="html" value="3130" />
+          <entry key="py" value="3279" />
+          <entry key="txt" value="577" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="2616" />
-          <entry key="PLAIN_TEXT" value="559" />
-          <entry key="Python" value="3181" />
+          <entry key="HTML" value="3130" />
+          <entry key="PLAIN_TEXT" value="577" />
+          <entry key="Python" value="3279" />
         </counts>
       </usages-collector>
     </session>
@@ -103,26 +103,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blog/templates/blog/blog_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="56" lean-forward="true" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
+            <state relative-caret-position="87">
+              <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+              <folding>
+                <element signature="e#992#999#1" expanded="true" />
+                <element signature="e#1455#1462#1" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blog/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="74" column="40" selection-start-line="74" selection-start-column="40" selection-end-line="74" selection-end-column="40" />
+            <state relative-caret-position="240">
+              <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
-                <marker date="1548255628000" expanded="true" signature="576:581" ph="..." />
-                <marker date="1548255628000" expanded="true" signature="720:725" ph="..." />
-                <marker date="1548255628000" expanded="true" signature="1020:1021" ph="..." />
-                <marker date="1548255628000" expanded="true" signature="2094:2099" ph="..." />
+                <marker date="1548336544000" expanded="true" signature="586:591" ph="..." />
+                <marker date="1548336544000" expanded="true" signature="793:798" ph="..." />
+                <marker date="1548336544000" expanded="true" signature="1093:1094" ph="..." />
+                <marker date="1548336544000" expanded="true" signature="2167:2172" ph="..." />
               </folding>
             </state>
           </provider>
@@ -186,8 +189,8 @@
       <find>clean</find>
       <find>object</find>
       <find>Blog</find>
-      <find>obj</find>
       <find>body</find>
+      <find>obj</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -208,18 +211,18 @@
         <option value="$PROJECT_DIR$/blog/templates/blog/blog_form.html" />
         <option value="$PROJECT_DIR$/blog/templates/blog/blog_update_form.html" />
         <option value="$PROJECT_DIR$/blog/templates/blog/blog_create_form.html" />
-        <option value="$PROJECT_DIR$/blog/templates/blog/blog_list.html" />
         <option value="$PROJECT_DIR$/blog/templates/blog/blog_detail.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/blog/views.py" />
+        <option value="$PROJECT_DIR$/blog/templates/blog/blog_list.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="286" />
-    <option name="y" value="165" />
-    <option name="width" value="1131" />
-    <option name="height" value="677" />
+    <option name="x" value="312" />
+    <option name="y" value="89" />
+    <option name="width" value="1109" />
+    <option name="height" value="723" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -509,15 +512,29 @@
       <option name="project" value="LOCAL" />
       <updated>1548253776896</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="メッセージヘルパを実装">
+      <created>1548255694080</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1548255694080</updated>
+    </task>
+    <task id="LOCAL-00028" summary="削除のメッセージヘルパを実装">
+      <created>1548256088559</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1548256088559</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="286" y="165" width="1131" height="677" extended-state="0" />
+    <frame x="312" y="89" width="1109" height="723" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32072073" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2665441" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" />
@@ -540,8 +557,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="blogアプリケーションの追加" />
-    <MESSAGE value="記事モデルの実装" />
     <MESSAGE value="&gt; python manage.py makemigrations&#10;マイグレーションコマンドの実行" />
     <MESSAGE value="&gt; python manage.py migrate&#10;マイグレーションコマンドの実行" />
     <MESSAGE value="管理サイトの開放、日本語化" />
@@ -565,7 +580,9 @@
     <MESSAGE value="リンクの実装" />
     <MESSAGE value="作成と更新ビューのテンプレートを分ける&#10;⇒オリジナルのテンプレートの指定&#10;ホームに新規作成ボタンを実装" />
     <MESSAGE value="テンプレートのオブジェクト参照名をカスタマイズ" />
-    <option name="LAST_COMMIT_MESSAGE" value="テンプレートのオブジェクト参照名をカスタマイズ" />
+    <MESSAGE value="メッセージヘルパを実装" />
+    <MESSAGE value="削除のメッセージヘルパを実装" />
+    <option name="LAST_COMMIT_MESSAGE" value="削除のメッセージヘルパを実装" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/blog/migrations/0001_initial.py">
@@ -665,20 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog/templates/blog/blog_update_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog/templates/blog/blog_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="56" lean-forward="true" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
@@ -689,16 +692,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/blog/templates/blog/blog_update_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/blog/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="74" column="40" selection-start-line="74" selection-start-column="40" selection-end-line="74" selection-end-column="40" />
+        <state relative-caret-position="240">
+          <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <marker date="1548255628000" expanded="true" signature="576:581" ph="..." />
-            <marker date="1548255628000" expanded="true" signature="720:725" ph="..." />
-            <marker date="1548255628000" expanded="true" signature="1020:1021" ph="..." />
-            <marker date="1548255628000" expanded="true" signature="2094:2099" ph="..." />
+            <marker date="1548336544000" expanded="true" signature="586:591" ph="..." />
+            <marker date="1548336544000" expanded="true" signature="793:798" ph="..." />
+            <marker date="1548336544000" expanded="true" signature="1093:1094" ph="..." />
+            <marker date="1548336544000" expanded="true" signature="2167:2172" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/templates/blog/blog_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+          <folding>
+            <element signature="e#992#999#1" expanded="true" />
+            <element signature="e#1455#1462#1" expanded="true" />
           </folding>
         </state>
       </provider>
